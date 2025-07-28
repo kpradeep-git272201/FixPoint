@@ -52,7 +52,7 @@ export class ManageBugComponent implements OnInit {
             name: 'My Issue'
         }
     ];
-    selectedQuery: any;
+    selectedQuery: any=2;
     typeColors: any;
     statusColors: any;
     user: any;
@@ -72,10 +72,12 @@ export class ManageBugComponent implements OnInit {
         this.typeColors = this.commonService.typeColors;
         this.statusColors = this.commonService.statusColors;
         const encrypted = localStorage.getItem('encrypted');
-        this.user = this.encrypDecryptService.getDecryptedData(encrypted);
-        this.selectedQuery = this.user.roleIds.includes('ROLE_ADMIN') ? 1 : 2;
-        this.userId = this.user.userId;
-        this.isAdmin = this.user.roleIds.includes('ROLE_ADMIN') || this.user.roleIds.includes('ROLE_MANAGER');
+        if(encrypted){
+            this.user = this.encrypDecryptService.getDecryptedData(encrypted);
+            this.selectedQuery = this.user.roleIds.includes('ROLE_ADMIN') ? 1 : 2;
+            this.userId = this.user.userId;
+            this.isAdmin = this.user.roleIds.includes('ROLE_ADMIN') || this.user.roleIds.includes('ROLE_MANAGER');
+        }
         this.getUser();
         this.getIssueList();
         this.createVendorForm();

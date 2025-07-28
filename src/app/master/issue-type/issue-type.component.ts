@@ -33,9 +33,11 @@ export class IssueTypeComponent {
     ) {}
     ngOnInit() {
         const encrypted = localStorage.getItem('encrypted');
-        const user = this.encrypDecryptService.getDecryptedData(encrypted);
-        this.userId = user.userId;
-        this.isAdmin = user.roleIds.includes('ROLE_ADMIN') || user.roleIds.includes('ROLE_MANAGER');
+        if(encrypted){
+            const user = this.encrypDecryptService.getDecryptedData(encrypted);
+            this.userId = user.userId;
+            this.isAdmin = user.roleIds.includes('ROLE_ADMIN') || user.roleIds.includes('ROLE_MANAGER');
+        }
         this.loading=true;
         this.getIssueType(); 
         this.createIssueForm();

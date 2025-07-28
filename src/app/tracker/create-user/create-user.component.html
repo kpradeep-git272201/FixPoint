@@ -1,4 +1,4 @@
-<p-fluid [formGroup]="userForm">
+<p-fluid *ngIf="userForm" [formGroup]="userForm">
   <div class="flex">
     <div class="card flex flex-col gap-6 w-full">
       <div class="font-semibold text-xl">Create / Edit User</div>
