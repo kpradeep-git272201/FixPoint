@@ -1,15 +1,16 @@
 .login-container {
     display: flex;
     height: 100vh;
-    background-color: #f6f8fc;
 
     .left-pane {
-        flex: 1;
-        background-color: #f0f4ff;
+        flex: 0 0 65%;
+        // background: linear-gradient(180deg, #fefcea,#f3edbf, #f5e14e);
+        // background: linear-gradient(180deg, #f3e5f5, #9c27b0);
+        background: linear-gradient(0deg, #bfc395, #d1c9a2, #dfcfb1, #ebd7c2, #f3dfd3, #f9e9e3, #fdf3f1, #fffefe);
         display: flex;
         align-items: center;
         justify-content: center;
-
+        border-radius: 20px;
         img {
             width: 80%;
             max-width: 500px;
@@ -17,18 +18,17 @@
     }
 
     .right-pane {
-        flex: 1;
-        background-color: #002f6c;
+        flex: 0 0 35%;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
 
         .login-card {
-            width: 80%;
-            max-width: 400px;
-            background: white;
-            color: black;
+            width: 90%;
+            max-width: 500px;
+            // background: white;
+            // color: black;
             border-radius: 8px;
             padding: 32px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -91,4 +91,181 @@
             }
         }
     }
+}
+
+.full-width-input {
+    width: 100%;
+}
+
+.login-card input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.email-icon {
+    color: #ff4343;
+}
+
+.account {
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0%;
+}
+
+.logo-wrapper {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.logo-wrapper .emblem {
+    height: 40px;
+}
+
+.Fix {
+    color: #1ec9b0;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.Point {
+    color: #e34c4c;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.p-error {
+    color: rgb(184, 39, 39);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: linear-gradient(135deg, #00373e, #045f60); // Note: this won't work as color
+}
+
+.main {
+    display: flex;
+    width: 100%;
+    background: #ffffff;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    background: linear-gradient(0deg, #a8edea, #fed6e3);
+    // background: linear-gradient(135deg, #43e97b, #38f9d7);
+    // background: linear-gradient(135deg, #d9afd9, #97d9e1);
+    // background: linear-gradient(135deg, #c2e9fb, #a1c4fd);
+    // background: linear-gradient(135deg, #43e97b, #38f9d7);
+    // background: linear-gradient(180deg, #fefcea, #f1da36);
+    // background: linear-gradient(180deg, #f3e5f5, #9c27b0);
+    // background: linear-gradient(180deg, #e0f2f1,#e0f2f1,#c1e6e4, #4caf50);
+}
+
+label {
+    color: black;
+}
+p {
+    color: black;
+}
+#span:hover {
+    text-decoration: underline;
+    color: #431ec9;
+    font-size: 16px;
+}
+.version {
+    display: flex;
+}
+.updatedOn {
+    margin-bottom: 5px;
+    color: black;
+    // display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    font-size: 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .login-container {
+    flex-direction: column;
+
+    .left-pane,
+    .right-pane {
+      flex: 1 1 100%;
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .left-pane {
+      order: 2;
+      padding: 20px;
+      img {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+
+    .right-pane {
+      order: 1;
+      padding: 20px;
+      .login-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 24px;
+        box-shadow: none;
+      }
+    }
+  }
+
+  .main {
+    flex-direction: column;
+    padding: 10px;
+    background: linear-gradient(0deg, #a8edea, #fed6e3);
+  }
+
+  .logo-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .Fix,
+  .Point {
+    font-size: 18px;
+  }
+
+  .updatedOn {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .login-card {
+    padding: 16px !important;
+  }
+
+  .login-container {
+    padding: 10px;
+  }
+
+  .p-button {
+    font-size: 14px !important;
+  }
+
+  input,
+  label {
+    font-size: 14px;
+  }
+
+  .Fix,
+  .Point {
+    font-size: 16px;
+  }
+
+  .updatedOn {
+    font-size: 10px;
+  }
 }
